@@ -1,0 +1,2 @@
+# Dukalote
+Store/warehouse manager
