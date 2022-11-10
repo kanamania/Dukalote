@@ -20,6 +20,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
+from inventory.views import *
+from sales.views import *
 from settings.views import *
 
 
@@ -38,6 +40,8 @@ router.register(r'users', UserViewSet)
 router.register(r'categories', CategoryViewSet)
 router.register(r'districts', DistrictViewSet)
 router.register(r'regions', RegionViewSet)
+router.register(r'sales', SaleViewSet)
+router.register(r'locations', LocationViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
