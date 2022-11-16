@@ -32,12 +32,28 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+# CACHE
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "deals"
+    }
+}
+
 # Application definition
 
 INSTALLED_APPS = [
+    'sales',
+    'inventory',
     'dashboard',
     'settings',
     'rest_framework',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,8 +98,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vi_dukalote',
+        'USER': 'developer',
+        'PASSWORD': 'developer',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
