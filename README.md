@@ -1,2 +1,2 @@
 # Dukalote
-Store/warehouse manager
+Warehousing and distribution
