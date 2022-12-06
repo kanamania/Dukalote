@@ -29,7 +29,8 @@ from settings.views import *
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
-        'dashboard': reverse('dashboard', request=request, format=format),
+        'inventory': reverse('inventory', request=request, format=format),
+        'sales': reverse('sales', request=request, format=format),
         'settings': reverse('settings', request=request, format=format),
     })
 

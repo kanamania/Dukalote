@@ -9,7 +9,7 @@ class Sale(models.Model):
     quantity = models.IntegerField(default=1)
     location = models.ForeignKey(Location, related_name='sales', on_delete=models.PROTECT)
     status = models.IntegerField(default=1)
-    creator = models.ForeignKey(User, related_name='sales', on_delete=models.PROTECT)
+    creator = models.ForeignKey(User, related_name='created_sales', on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(null=True, auto_now=True)
     deleted_at = models.DateTimeField(null=True)

@@ -8,7 +8,7 @@ from settings.serializers import *
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.exclude(deleted_at__isnull=True).all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
