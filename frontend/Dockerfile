@@ -6,9 +6,7 @@ COPY package.json ./
 
 COPY ./ ./
 
-RUN npm install -g npm@9.1.2
-RUN npm i npm-run-all
+RUN npm install -g npm@latest
 RUN npm i
 
-EXPOSE 8000
 CMD ["npm", "run", "dev"]
